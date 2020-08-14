@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbars from "../components/Navbar";
 import Card from "../components/Card";
 
-const Home = () => {
+const Home = ({ history }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,12 @@ const Home = () => {
         <Row className="d-flex justify-content-center">
           {data.map((d) => {
             return (
-              <Col key={d.name} xs="6" sm="6" md="3">
+              <Col
+                key={d.name}
+                xs="6"
+                md="3"
+                onClick={() => history.push(`/detail/${d.name}`)}
+              >
                 <Card name={d.name} />
               </Col>
             );
