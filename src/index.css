@@ -1,8 +1,17 @@
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.container-mg {
+  margin-top: 70px;
+}
+
 .navbar-bg {
   background-color: #f5744d;
 }
 
 .navbar-text {
+  font-family: "Slabo 13px", serif;
   font-size: 1.7em !important;
   font-weight: 700 !important;
   color: #182f53 !important;
@@ -32,4 +41,13 @@
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.badge-inline {
+  display: inline;
+  font-size: 1.1em;
+}
+
+.sub-detail {
+  font-weight: 500;
 }

@@ -15,13 +15,10 @@ const Navbars = ({ children, isToggle }) => {
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <Navbar className="navbar-bg" light expand="sm">
+    <Navbar className="navbar-bg" light expand="sm" fixed="top">
       <Container fluid="xl">
-        <NavbarBrand
-          onClick={() => history.push("/home")}
-          className="navbar-text"
-        >
-          Pokemon Deck
+        <NavbarBrand onClick={() => history.push("/")} className="navbar-text">
+          POKEMON DECK
         </NavbarBrand>
         {isToggle ? <NavbarToggler onClick={toggle} /> : null}
         <Collapse isOpen={isOpen} navbar>
