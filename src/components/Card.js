@@ -16,7 +16,7 @@ const Cards = ({ name }) => {
   return (
     <div>
       <Card className="card my-3">
-        <CardImg top src={data} alt="Card image cap" className="img-card" />
+        <CardImg top src={data} alt={name} className="img-card" />
         <CardTitle className="text-center">{name}</CardTitle>
       </Card>
     </div>
