@@ -3,7 +3,7 @@ body {
 }
 
 .container-mg {
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 .navbar-bg {
@@ -51,6 +51,15 @@ body {
 .badge-inline {
   display: inline;
   font-size: 1.1em;
+}
+
+.badge-color {
+  background-color: #9c3725 !important;
+}
+
+.pokemon {
+  width: 50px;
+  margin-top: -5px;
 }
 
 .sub-detail {

@@ -45,8 +45,8 @@ const Detail = ({ match }) => {
                 <dt className="col-sm-2">Type:</dt>
                 <dd className="col-sm-9">
                   {data.types.map((type) => (
-                    <p className="badge-inline">
-                      <Badge color="primary" className="mr-1 ">
+                    <p key={type.type.name} className="badge-inline">
+                      <Badge className="mr-1 badge-color">
                         {type.type.name.charAt(0).toUpperCase() +
                           type.type.name.slice(1)}
                       </Badge>
@@ -55,14 +55,14 @@ const Detail = ({ match }) => {
                 </dd>
 
                 <dt className="col-sm-2">Abilities:</dt>
-                <dd className="col-sm-9">
+                <dd className="col-lg-9 col-md-10">
                   {data.abilities.map((abilities) => (
-                    <dl className="row mb-n1">
-                      <dt className="col-sm-4">
+                    <dl key={abilities.ability.name} className="row mb-n1">
+                      <dt className="col-sm-3">
                         {abilities.ability.name.charAt(0).toUpperCase() +
                           abilities.ability.name.slice(1)}
                       </dt>
-                      <dd className="col-sm-8 text-justify">
+                      <dd className="col-sm-9 text-justify">
                         <Ability url={abilities.ability.url} />
                       </dd>
                     </dl>
@@ -72,13 +72,17 @@ const Detail = ({ match }) => {
                 <dt className="col-sm-2">Status:</dt>
                 <dd className="col-sm-9">
                   {data.stats.map((stats) => (
-                    <dl className="row">
-                      <dt className="col-sm-4 sub-detail">
+                    <dl key={stats.stat.name} className="row">
+                      <dt className="col-lg-4 sub-detail">
                         {stats.stat.name.charAt(0).toUpperCase() +
                           stats.stat.name.slice(1)}
                       </dt>
-                      <dd className="col-sm-8 mb-n1">
-                        <Progress value={stats.base_stat} className="mt-1">
+                      <dd className="col-lg-10 mb-n1">
+                        <Progress
+                          value={stats.base_stat}
+                          className="mt-1 progress-color"
+                          color="info"
+                        >
                           {stats.base_stat}
                         </Progress>
                       </dd>
