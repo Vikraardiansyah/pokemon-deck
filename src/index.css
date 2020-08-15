@@ -20,6 +20,11 @@ body {
   cursor: pointer;
 }
 
+.not-found {
+  text-align: center;
+  margin-top: 50px;
+}
+
 .search-bg {
   background-color: #f9eee2 !important;
 }
