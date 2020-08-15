@@ -21,7 +21,7 @@ const Home = ({ history, location }) => {
 
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/type")
+      .get(process.env.REACT_APP_URL_TYPE)
       .then((response) => setTypes(response.data.results));
   }, []);
 
@@ -32,7 +32,9 @@ const Home = ({ history, location }) => {
     } else if (type) {
       setIsLoading(true);
       axios
-        .get(`https://pokeapi.co/api/v2/type/${type.toString().toLowerCase()}`)
+        .get(
+          `${process.env.REACT_APP_URL_TYPE}${type.toString().toLowerCase()}`
+        )
         .then((response) => {
           setDataType(response.data.pokemon);
           history.push(`/home?type=${type}`);
@@ -43,7 +45,7 @@ const Home = ({ history, location }) => {
 
   const searchData = (search) => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${search}`)
+      .get(`${process.env.REACT_APP_URL}${search}`)
       .then((response) => {
         setDataSearch(response.data);
         setIsLoading(false);
@@ -66,7 +68,7 @@ const Home = ({ history, location }) => {
       history.push("/home");
     }
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon?offset=${(page - 1) * 20}`)
+      .get(`${process.env.REACT_APP_URL_OFFSET}${(page - 1) * 20}`)
       .then((response) => {
         setData(response.data.results);
         setPageData(response.data);

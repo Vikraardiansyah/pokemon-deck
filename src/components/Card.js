@@ -11,7 +11,7 @@ const Cards = ({ name, url }) => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(url ? url : `https://pokeapi.co/api/v2/pokemon/${name}`)
+      .get(url ? url : `${process.env.REACT_APP_URL}${name}`)
       .then((response) => {
         setData(response.data.sprites.other.dream_world.front_default);
         setOtherData(response.data.sprites.front_default);

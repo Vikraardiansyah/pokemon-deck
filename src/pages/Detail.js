@@ -8,7 +8,7 @@ const Detail = ({ match }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${match.params.name}`)
+      .get(`${process.env.REACT_APP_URL}${match.params.name}`)
       .then((response) => setData(response.data));
   });
 
